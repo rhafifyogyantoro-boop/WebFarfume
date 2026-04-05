@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Product</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="icon" type="image/x-icon" href="img/favicon.png">
+  <style>
+    *::-webkit-scrollbar {
+      width: 0;
+    }
+
+    *::-webkit-scrollbar-track {
+      overflow: scroll;
+      background: transparent;
+    }
+
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    body {
+      flex: 1;
+    }
+
+    main {
+      flex: 1;
+    }
+
+    .nav-hover {
+      border-radius: 50px;
+      transition: background-color 0.3s ease;
+    }
+
+    .nav-hover:hover {
+      background-color: rgba(163, 161, 153, 0.15);
+    }
+
+    .search-container {
+      background-color: white;
+      border-radius: 50px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      padding: 10px;
+      width: 100%;
+      transition: all 0.3s ease;
+    }
+
+    .search-container:hover {
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    }
+
+    .form-control.search-input {
+      border: none;
+      background: transparent;
+      padding-left: 20px;
+      font-size: 1rem;
+      height: 50px;
+    }
+
+    .form-control.search-input:focus {
+      box-shadow: none;
+      outline: none;
+    }
+
+    .btn-search {
+      background-color: #007bff;
+      color: white;
+      border-radius: 50px;
+      padding: 10px 20px;
+      border: none;
+      transition: all 0.3s ease;
+    }
+
+    .btn-search:hover {
+      background-color: #0056b3;
+      transform: scale(1.05);
+    }
+
+    .search-icon {
+      color: #6c757d;
+      position: absolute;
+      left: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .toast-custom {
+      animation: slideInRight 0.5s ease forwards;
+    }
+
+    @keyframes slideInRight {
+      from {
+        transform: translateX(100%);
+        opacity: 0;
+      }
+      to {
+        transform: translateX(0%);
+        opacity: 1;
+      }
+    }
+
+    .social-icon {
+      transition: transform 0.3s;
+    }
+
+    .social-icon:hover {
+      transform: scale(1.3);
+    }
+  </style>
+</head>
+
+<body style="background-color: #f5f5f5;">
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light position-sticky top-0 p-3" style="z-index: 1; backdrop-filter: blur(50px); background-color: rgba(245, 244, 240, 0.1);">
+      <div class="container-md">
+          <a class="navbar-brand fw-bold fs-2" href="construction.html">Euphoscènt</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+          <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navMenu">
+          <ul class="navbar-nav ms-auto">
+              <li class="nav-item nav-hover px-3 mx-1 fs-6"><a class="nav-link" href="index.html">Home</a></li>
+              <li class="nav-item nav-hover px-3 mx-1 fs-6"><a class="nav-link" href="tentang.html">About</a></li>
+              <li class="nav-item nav-hover px-3 mx-1 fs-6"><a class="nav-link active fw-bold" href="produk.html">Product</a></li>
+              <li class="nav-item nav-hover px-3 mx-1 fs-6"><a class="nav-link" href="pemesanan.html">Shop</a></li>
+              <li class="nav-item nav-hover px-3 mx-1 fs-6"><a class="nav-link" href="kontak.html">Contact</a></li>
+          </ul>
+          </div>
+      </div>
+  </nav>
+
+  <main class="container-sm pb-5">
+    <section class="container-sm">
+      
+      <h1 class="mb-5 fw-bold pt-5 text-center">Daftar Parfum</h1>
+  
+      <div class="container-fluid search-container position-relative mb-5">
+        <form class="d-flex align-items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="search-icon feather feather-search">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input id="searchInput" class="form-control search-input ps-5" type="search"
+                    placeholder="Search perfume..." aria-label="Search">
+            <button class="btn btn-search ms-2" type="submit">Search</button>
+        </form>
+      </div>
+  
+      <!-- Produk 1 -->
+      <div class="container-sm py-4 px-3 pe-5 border rounded-5 shadow-sm mb-3 bg-white produk-item">
+        <div class="row g-3 align-items-center">
+          
+          <div class="col-md-2">
+            <div class="ratio ratio-1x1 overflow-hidden">
+              <img src="img/Product1.png" class="object-fit-cover" alt="Jouisse">
+            </div>
+          </div>
+          
+          <div class="col-md-7">
+            <h3 class="mb-1 fw-semibold fs-4">Jouisse</h3>
+            <p class="fs-5 mb-2 text-muted">
+              Lush, fruity, and playful — a vibrant burst of ripe berries and sunlit citrus, bottled for the bold and the free-spirited.
+            </p>
+          </div>
+          
+          <div class="col-md-3 text-md-end text-start">
+            <p class="fw-bold mb-2 fs-4">Rp 189.000</p>
+            <div class="d-grid gap-2 justify-content-md-end my-4">
+
+              <!-- Tombol Cart -->
+              <button onclick="showToast('Barang berhasil ditambahkan ke keranjang!', 'check')" class="btn btn-dark btn-sm d-flex align-items-center justify-content-center gap-2 rounded-pill px-3 py-2">
+                <i class="fas fa-shopping-cart"></i>
+                <span>Add to Cart</span>
+              </button>
+
+              <!-- Tombol Wishlist -->
+              <button onclick="toggleWishlist(this)" class="btn btn-outline-dark btn-sm d-flex align-items-center justify-content-center gap-2 rounded-pill px-3 py-2" data-wishlisted="false">
+                <i class="fas fa-heart"></i>
+                <span>Wishlist</span>
+              </button>
+
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Produk 2 -->
+      <div class="container-sm py-4 px-3 pe-5 border rounded-5 shadow-sm mb-3 bg-white produk-item">
+        <div class="row g-3 align-items-center">
+          
+          <div class="col-md-2">
+            <div class="ratio ratio-1x1 overflow-hidden">
+              <img src="img/Product2.png" class="object-fit-cover" alt="Savoreux">
+            </div>
+          </div>
+          
+          <div class="col-md-7">
+            <h3 class="mb-1 fw-semibold fs-4">Savoreux</h3>
+            <p class="fs-5 mb-2 text-muted">
+              A rich and velvety blend that melts into the skin with whispers of vanilla and sugar — indulgent, warm, and unforgettable.
+            </p>
+          </div>
+          
+          <div class="col-md-3 text-md-end text-start">
+            <p class="fw-bold mb-2 fs-4">Rp 329.000</p>
+            <div class="d-grid gap-2 justify-content-md-end my-4">
+
+              <!-- Tombol Cart -->
+              <button onclick="showToast('Barang berhasil ditambahkan ke keranjang!', 'check')" class="btn btn-dark btn-sm d-flex align-items-center justify-content-center gap-2 rounded-pill px-3 py-2">
+                <i class="fas fa-shopping-cart"></i>
+                <span>Add to Cart</span>
+              </button>
+
+              <!-- Tombol Wishlist -->
+              <button onclick="toggleWishlist(this)" class="btn btn-outline-dark btn-sm d-flex align-items-center justify-content-center gap-2 rounded-pill px-3 py-2" data-wishlisted="false">
+                <i class="fas fa-heart"></i>
+                <span>Wishlist</span>
+              </button>
+
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Produk 3 -->
+      <div class="container-sm py-4 px-3 pe-5 border rounded-5 shadow-sm mb-3 bg-white produk-item">
+        <div class="row g-3 align-items-center">
+          
+          <div class="col-md-2">
+            <div class="ratio ratio-1x1 overflow-hidden">
+              <img src="img/Product3.png" class="object-fit-cover" alt="Eau Vide">
+            </div>
+          </div>
+          
+          <div class="col-md-7">
+            <h3 class="mb-1 fw-semibold fs-4">Eau Vide</h3>
+            <p class="fs-5 mb-2 text-muted">
+              A soft, barely-there scent that feels like a clean breeze on bare skin — pure, minimal, and quietly confident.
+            </p>
+          </div>
+          
+          <div class="col-md-3 text-md-end text-start">
+            <p class="fw-bold mb-2 fs-4">Rp 159.000</p>
+            <div class="d-grid gap-2 justify-content-md-end my-4">
+              
+              <!-- Tombol Cart -->
+              <button onclick="showToast('Barang berhasil ditambahkan ke keranjang!', 'check')" class="btn btn-dark btn-sm d-flex align-items-center justify-content-center gap-2 rounded-pill px-3 py-2">
+                <i class="fas fa-shopping-cart"></i>
+                <span>Add to Cart</span>
+              </button>
+
+              <!-- Tombol Wishlist -->
+              <button onclick="toggleWishlist(this)" class="btn btn-outline-dark btn-sm d-flex align-items-center justify-content-center gap-2 rounded-pill px-3 py-2" data-wishlisted="false">
+                <i class="fas fa-heart"></i>
+                <span>Wishlist</span>
+              </button>
+
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Produk 4 -->
+      <div class="container-sm py-4 px-3 pe-5 border rounded-5 shadow-sm mb-3 bg-white produk-item">
+        <div class="row g-3 align-items-center">
+          
+          <div class="col-md-2">
+            <div class="ratio ratio-1x1 overflow-hidden">
+              <img src="img/Product4.png" class="object-fit-cover" alt="Azurin">
+            </div>
+          </div>
+          
+          <div class="col-md-7">
+            <h3 class="mb-1 fw-semibold fs-4">Azurin</h3>
+            <p class="fs-5 mb-2 text-muted">
+              A fresh aquatic scent kissed by sea salt and driftwood — breezy, clean, and effortlessly sophisticated.
+            </p>
+          </div>
+          
+          <div class="col-md-3 text-md-end text-start">
+            <p class="fw-bold mb-2 fs-4">Rp 279.000</p>
+            <div class="d-grid gap-2 justify-content-md-end my-4">
+              
+              <!-- Tombol Cart -->
+              <button onclick="showToast('Barang berhasil ditambahkan ke keranjang!', 'check')" class="btn btn-dark btn-sm d-flex align-items-center justify-content-center gap-2 rounded-pill px-3 py-2">
+                <i class="fas fa-shopping-cart"></i>
+                <span>Add to Cart</span>
+              </button>
+
+              <!-- Tombol Wishlist -->
+              <button onclick="toggleWishlist(this)" class="btn btn-outline-dark btn-sm d-flex align-items-center justify-content-center gap-2 rounded-pill px-3 py-2" data-wishlisted="false">
+                <i class="fas fa-heart"></i>
+                <span>Wishlist</span>
+              </button>
+
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Produk 5 -->
+      <div class="container-sm py-4 px-3 pe-5 border rounded-5 shadow-sm mb-3 bg-white produk-item">
+        <div class="row g-3 align-items-center">
+          
+          <div class="col-md-2">
+            <div class="ratio ratio-1x1 overflow-hidden">
+              <img src="img/Product5.png" class="object-fit-cover" alt="Lilane">
+            </div>
+          </div>
+          
+          <div class="col-md-7">
+            <h3 class="mb-1 fw-semibold fs-4">Lilane</h3>
+            <p class="fs-5 mb-2 text-muted">
+              A delicate floral fusion with powdery notes and a touch of mystery — graceful, calming, and endlessly charming.
+            </p>
+          </div>
+          
+          <div class="col-md-3 text-md-end text-start">
+            <p class="fw-bold mb-2 fs-4">Rp 249.000</p>
+            <div class="d-grid gap-2 justify-content-md-end my-4">
+              
+              <!-- Tombol Cart -->
+              <button onclick="showToast('Barang berhasil ditambahkan ke keranjang!', 'check')" class="btn btn-dark btn-sm d-flex align-items-center justify-content-center gap-2 rounded-pill px-3 py-2">
+                <i class="fas fa-shopping-cart"></i>
+                <span>Add to Cart</span>
+              </button>
+
+              <!-- Tombol Wishlist -->
+              <button onclick="toggleWishlist(this)" class="btn btn-outline-dark btn-sm d-flex align-items-center justify-content-center gap-2 rounded-pill px-3 py-2" data-wishlisted="false">
+                <i class="fas fa-heart"></i>
+                <span>Wishlist</span>
+              </button>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center my-5">
+        <a href="pemesanan.html" class="btn btn-dark btn-lg px-5 py-3 rounded-pill shadow">
+          <i class="fa-solid fa-bag-shopping me-3"></i>Shop Now
+        </a>
+      </div>
+    </section>
+  </main>
+
+
+  <!-- Footer -->
+  <footer class="text-white" style="background: linear-gradient(rgba(0, 0, 0, 1), rgba(54, 47, 28, 1)); cursor: default;">
+  <!-- Section: Social media -->
+  
+      <!-- Section: Links  -->
+      <section class="p-3">
+          <div class="container text-center text-md-start mt-5">
+              <div class="row mt-3">
+                  <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                      <h6 class="text-uppercase fw-bold mb-4">
+                          <i class="fas fa-gem me-3"></i>Euphoscènt
+                      </h6>
+                      <p>
+                          To be the first choice of quality perfume in Indonesia that reflects the personality of each user.
+                      </p>
+                      <div class="col-fluid mt-5">
+                      <a href="https://www.facebook.com/" target="_blank" class="me-4 text-reset" style="text-decoration: none;">
+                          <i class="fab fa-facebook-f social-icon"></i>
+                      </a>
+                      <a href="https://twitter.com/" target="_blank" class="me-4 text-reset" style="text-decoration: none;">
+                          <i class="fab fa-twitter social-icon"></i>
+                      </a>
+                      <a href="https://www.instagram.com/" target="_blank" class="me-4 text-reset" style="text-decoration: none;">
+                          <i class="fab fa-instagram social-icon"></i>
+                      </a>
+                      <a href="https://www.linkedin.com/" target="_blank" class="me-4 text-reset" style="text-decoration: none;">
+                          <i class="fab fa-linkedin social-icon"></i>
+                      </a>
+                      <a href="https://github.com/" target="_blank" class="me-4 text-reset" style="text-decoration: none;">
+                          <i class="fab fa-github social-icon"></i>
+                      </a>
+                  </div>
+                  </div>
+  
+                  
+                  <!-- Right -->
+                  <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                      <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+                      <p><i class="fas fa-home me-3"></i>Condongcatur, Kabupaten Sleman, Daerah Istimewa Yogyakarta</p>
+                      <p>
+                          <i class="fas fa-envelope me-3"></i>
+                          euphoscènt@gmail.com
+                      </p>
+                      <p><i class="fas fa-phone me-3"></i>+62 274884 201</p>   
+                  </div>
+              </div>
+          </div>
+      </section>
+  
+      <div class="text-center p-4" style="background-color: #000000;">
+          <span class="fw-medium">&#169; 2025 Euphoscènt</span>
+      </div>
+  </footer>
+
+  <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 9999;">
+    <div id="toast-container" class="toast-stack d-flex flex-column align-items-end gap-2"></div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+  document.getElementById('searchInput').addEventListener('input', function () {
+    const filter = this.value.toLowerCase();
+    document.querySelectorAll('.produk-item').forEach(item => {
+      const text = item.textContent.toLowerCase();
+      item.style.display = text.includes(filter) ? '' : 'none';
+    });
+  });
+
+  function showToast(message, iconType = "check") {
+    const toastId = "toast" + Date.now();
+
+    let iconHTML = "";
+    if (iconType === "check") {
+      iconHTML = `<span class="me-2 text-success fs-5">✔️</span>`;
+    } else if (iconType === "love") {
+      iconHTML = `<span class="me-2 text-danger fs-5">❤️</span>`;
+    } else if (iconType === "info") {
+    iconHTML = `<span class="me-2 text-primary fs-5">ℹ️</span>`; // Tambahkan ini!
+  }
+
+    const toastHTML = `
+  <div id="${toastId}" class="toast toast-custom border border-1 rounded shadow show" role="alert" aria-live="assertive" aria-atomic="true" style="background-color: white;">
+    <div class="d-flex justify-content-between align-items-center p-3">
+      <div class="d-flex align-items-center">
+        ${iconHTML}
+        <div class="toast-body mb-0">${message}</div>
+      </div>
+      <button type="button" class="btn-close ms-3" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+  </div>
+`;
+
+    const container = document.getElementById("toast-container");
+    container.insertAdjacentHTML("beforeend", toastHTML);
+
+    const toastElement = document.getElementById(toastId);
+    const toast = new bootstrap.Toast(toastElement, { delay: 3000 });
+    toast.show();
+
+    toastElement.addEventListener('hidden.bs.toast', () => {
+      toastElement.remove();
+    });
+  }
+
+  function toggleWishlist(button) {
+    const isWishlisted = button.getAttribute("data-wishlisted") === "true";
+    const icon = button.querySelector("i");
+
+    if (isWishlisted) {
+      // Hapus wishlist
+      button.setAttribute("data-wishlisted", "false");
+      icon.classList.remove("text-danger");
+      showToast("Barang dihapus dari wishlist!", "info");
+    } else {
+      // Tambahkan ke wishlist
+      button.setAttribute("data-wishlisted", "true");
+      icon.classList.add("text-danger");
+      showToast("Barang ditambahkan ke wishlist!", "love");
+    }
+  }
+</script>
+
+
+</body>
+</html>
